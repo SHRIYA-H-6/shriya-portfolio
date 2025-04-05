@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(92, 73, 47);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .todo-container {
+            background: rgb(186, 150, 104);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+        }
+        h2 {
+            color: white;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: white;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px;
+            background: rgba(131, 5, 5, 0.733);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background: rgba(90, 0, 0, 0.8);
+        }
+        input[type="checkbox"] {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>📌 My To-Do List</h2>
+        <ul>
+            <li><input type="checkbox" checked> Complete HTML Project</li>
+            <li><input type="checkbox" checked> Review CSS Notes</li>
+            <li><input type="checkbox"> Start Java Practice</li>
+            <li><input type="checkbox"> Watch Coursera Python Course</li>
+        </ul>
+        <button class="btn" onclick="markAllDone()">Mark All as Done</button>
+    </div>
+    <script>
+        function markAllDone() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+        }
+    </script>
+</body>
+</html>
+

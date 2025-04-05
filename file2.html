@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Survey Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: rgb(92, 73, 47);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .survey-container {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px;
+      padding: 20px;
+      background: rgb(186, 150, 104);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .survey-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .survey-container label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    .survey-container input,
+    .survey-container textarea,
+    .survey-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+
+    .survey-container button {
+      width: 100%;
+      background: rgba(131, 5, 5, 0.733);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .survey-container button:hover {
+      background: rgba(131, 5, 5, 0.9);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 480px) {
+      .survey-container {
+        padding: 15px;
+      }
+
+      .survey-container button {
+        padding: 10px;
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="survey-container">
+    <h2>Survey Form</h2>
+    <form action="submit_survey.php" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="feedback">Feedback:</label>
+      <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating">
+        <option value="1">1 - Poor</option>
+        <option value="2">2 - Fair</option>
+        <option value="3">3 - Good</option>
+        <option value="4">4 - Very Good</option>
+        <option value="5">5 - Excellent</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
